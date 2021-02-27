@@ -26,4 +26,11 @@ for(let i = 0; i < openBtns.length; i++) {
   // closes modals
   closeBtn.addEventListener('click', addHidden);
   overlay.addEventListener('click', addHidden);
+
+  // esc key closes modals
+  document.addEventListener('keydown', function(e) {
+    if(e.key === 'Escape' && !modal.classList.contains('hidden')) {
+        addHidden();
+    }
+  });
 };
